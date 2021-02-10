@@ -5,15 +5,16 @@ let outerdiv = document.createElement("div");
 outerdiv.classList.add("outer-div")
 
 document.querySelector("button").addEventListener("click",searchresult);
-
+var data = '';
+var response = '';
 async function searchresult(e)
 {
  try{
     e.preventDefault();
-   let query=document.getElementById("showsearch").value;
-   let url=`https://api.tvmaze.com/search/shows?q=${query}`;
-   let response = await fetch(url);
-   let data= await response.json();
+   var query=document.getElementById("showsearch").value;
+   var url=`https://api.tvmaze.com/search/shows?q=${query}`;
+   response = await fetch(url);
+   data = await response.json();
  }catch(error)
  {
  console.log(error)
