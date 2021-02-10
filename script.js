@@ -8,12 +8,16 @@ document.querySelector("button").addEventListener("click",searchresult);
 
 async function searchresult(e)
 {
- 
+ try{
     e.preventDefault();
    let query=document.getElementById("showsearch").value;
-   let url=`http://api.tvmaze.com/search/shows?q=${query}`;
+   let url=`https://api.tvmaze.com/search/shows?q=${query}`;
    let response = await fetch(url);
    let data= await response.json();
+ }catch(error)
+ {
+ console.log(error)
+ }
 
 
    outerdiv.innerHTML="";
