@@ -1,16 +1,14 @@
-
-
-
 let outerdiv = document.createElement("div");
 outerdiv.classList.add("outer-div")
 
 document.querySelector("button").addEventListener("click",searchresult);
 var data = '';
 var response = '';
+
 async function searchresult(e)
 {
  try{
-    e.preventDefault();
+   e.preventDefault();
    var query=document.getElementById("showsearch").value;
    var url=`https://api.tvmaze.com/search/shows?q=${query}`;
    response = await fetch(url);
@@ -22,6 +20,9 @@ async function searchresult(e)
 
 
    outerdiv.innerHTML="";
+ 
+// Displaying data obtained from API-api.tvmaze.com
+ 
    data.forEach(ele=>{
    let newdiv = document.createElement("div");
    newdiv.classList.add("new-div");
@@ -65,18 +66,14 @@ async function searchresult(e)
     showsummary.innerHTML=` Summary : ${ele.show.summary}`;
 
     childDiv1.append(showimage,showtitle)
-    childDiv2.append(showgenres,showpremierdate,
-        showscheduleday,showscheduletime,showrating,shownetwork,shownetworkcountry,showsummary)
+    childDiv2.append(showgenres,showpremierdate,showscheduleday,showscheduletime,showrating,shownetwork,shownetworkcountry,showsummary)
+        
     newdiv.append(childDiv1,childDiv2);
     outerdiv.append(newdiv);
     document.body.append(outerdiv);
  
 
    })
-        
-        
-        
-        
-       
+             
         
 }
