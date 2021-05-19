@@ -8,9 +8,8 @@ var response = '';
 async function searchresult(e)
 {
  try{
-   e.preventDefault();
-  var query="girls"
-  query=document.getElementById("showsearch").value;
+   e.preventDefault(); 
+  var query=document.getElementById("showsearch").value;
    var url=`https://api.tvmaze.com/search/shows?q=${query}`;
    response = await fetch(url);
    data = await response.json();
