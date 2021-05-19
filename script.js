@@ -4,12 +4,12 @@ outerdiv.classList.add("outer-div")
 document.querySelector("button").addEventListener("click",searchresult);
 var data = '';
 var response = '';
-
+var query="girls"
 async function searchresult(e)
 {
  try{
    e.preventDefault();
-   var query=document.getElementById("showsearch").value;
+  query=document.getElementById("showsearch").value;
    var url=`https://api.tvmaze.com/search/shows?q=${query}`;
    response = await fetch(url);
    data = await response.json();
