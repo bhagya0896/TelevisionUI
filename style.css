@@ -25,6 +25,17 @@ div h2
        font-weight: bolder;
        
 }
+div h3
+{
+       color:white;
+       text-align:center;
+       text-transform: capitalize;
+       letter-spacing:2px;
+       padding-top:2px;
+       font-family: 'Courier New', Courier, monospace;
+       font-weight: bolder;
+       
+}
 #divTitle
 {
   text-align: center;
